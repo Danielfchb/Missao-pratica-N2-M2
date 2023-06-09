@@ -1,0 +1,81 @@
+.pnlCatalogo>* {
+    margin: 10;
+}
+
+#pnlCatalogo{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+
+.container-fluid {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    
+    
+    
+}
+
+
+.card-wrapper {
+    border-radius: 1px solid #000000;
+    margin-bottom: 20px;
+}
+
+.img_receita{
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 30%;
+
+}
+.card-title{
+    margin-top: 20px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.5rem;
+    font-weight:bold;
+    
+    
+}
+
+
+.card-text{   
+    text-align: start;
+    margin: 10px auto 10px auto;
+    padding-right: 50px;
+    font-size: larger;
+    font-family: 'Mulish', sans-serif;
+   
+}
+
+.item-receita{
+    height: 80%;
+
+}
+
+.item{
+    margin: 0 0 10px 50px;
+
+}
+
+.img_receita{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 30%;
+
+}
+
+.preparo{
+    font-family: 'Mulish', sans-serif;     
+    font-size:large;
+    letter-spacing: 2px;
+    text-align:justify ;
+    padding: 0;
+    
+
+}
