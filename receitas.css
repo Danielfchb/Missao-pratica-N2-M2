@@ -14,10 +14,7 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    flex-direction: column;
-    
-    
-    
+    flex-direction: column;    
 }
 
 
@@ -27,19 +24,15 @@
 }
 
 .img_receita{
-    
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 30%;
-
 }
 .card-title{
     margin-top: 20px;
     font-family: 'Mulish', sans-serif;
     font-size: 1.5rem;
     font-weight:bold;
-    
-    
 }
 
 
@@ -49,17 +42,14 @@
     padding-right: 50px;
     font-size: larger;
     font-family: 'Mulish', sans-serif;
-   
 }
 
 .item-receita{
     height: 80%;
-
 }
 
 .item{
     margin: 0 0 10px 50px;
-
 }
 
 .img_receita{
@@ -76,6 +66,4 @@
     letter-spacing: 2px;
     text-align:justify ;
     padding: 0;
-    
-
 }

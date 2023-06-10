@@ -19,31 +19,25 @@ function ordenar() {
     const selectOptions = document.getElementById('selectOptions').value
     const lista = document.querySelector('#valores')
     const listaTagsValores = lista.querySelectorAll("li");
-    console.log(listaTagsValores)
+    // console.log(listaTagsValores)
 
     const listaDesordenada = [];
     listaTagsValores.forEach(numero => {
         listaDesordenada.push(numero.textContent)
-        console.log(numero.textContent)
+        // console.log(numero.textContent)
 
     });
 
-    console.log(listaDesordenada);
-
-    if (selectOptions == "bubbleSort") {
-
+    if (selectOptions === "bubbleSort") {
         const listaOrdenada = bubbleSort(listaDesordenada);
-        console.log(listaOrdenada);
+
         let i = 0;
         listaTagsValores.forEach(tag => {
             tag.textContent = listaOrdenada[i];
             i++;
-
         });
-        const listaEmbaralhada = misturar(listaDesordenada);
-        console.log(listaEmbaralhada);
     }
-    else if (selectOptions == "selectionSort") {
+    else if (selectOptions === "selectionSort") {
         const listaOrdenada = selectionSort(listaDesordenada);
         let i = 0;
         listaTagsValores.forEach(tag => {
@@ -51,6 +45,16 @@ function ordenar() {
             i++;
 
         })
+    }
+    else if (selectOptions === "swap"){
+        const listaOrdenada = swap(listaDesordenada, 0, 1);
+        let i = 0;
+        listaTagsValores.forEach(tag => {
+            tag.textContent = listaOrdenada[i];
+            i++;
+
+        })
+        
     }
     else {
         const listaOrdenada = quickSort(listaDesordenada);
@@ -91,10 +95,24 @@ function misturando(lista) {
 
 }
 
+function swap(lista, position1, position2) {
+    // Verifica se as posições são válidas
+    if (position1 < 0 || position1 >= lista.length || position2 < 0 || position2 >= lista.length) {
+      console.log("Posições inválidas.");
+      return;
+    }
+    
+    // Realiza a troca dos valores
+    var temp = lista[position1];
+    lista[position1] = lista[position2];
+    lista[position2] = temp;
+    
+    return lista
+  }
+
 
 
 function bubbleSort(lista) {
-    console.log('lista', lista)
     var len = lista.length;
 
     for (var i = 0; i < len; i++) {
@@ -107,8 +125,7 @@ function bubbleSort(lista) {
             }
         }
     }
-    const listaOrdenada = lista.sort()
-    console.log('listaOrdenada', listaOrdenada)
+
     return lista;
 }
 

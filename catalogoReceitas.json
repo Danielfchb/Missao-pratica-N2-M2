@@ -1,0 +1,36 @@
+[
+    {
+        "titulo": "Arroz de Couve-Flor",
+        "imagem": "img/arrozdecouveflor.jpg",
+        "preparo": "Deixe a couve-flor picada. Adicione os ingredientes e refogue bem. Adicione sal, tampe a penela e deixe cozinhar.",
+        "ingredientes": [
+            "Arroz",
+            "Couve-Flor",
+            "Cebola média",
+            "Azeite"
+        ]
+    },
+    {
+        "titulo": "Bolo de Café",
+        "imagem": "img/bolo de cafe.jpg",
+        "preparo": "Bata o açúcar, as gemas e o café. Adicione farinha e chocolate e mexa bem. Bata as claras e junte às misturas",
+        "ingredientes": [
+            "Farinha de trigo",
+            "Açúcar, Café Coado",
+            "Chocolate em pó",
+            "Ovos"
+        ]
+    },
+    {
+        "titulo": "Coxinha de brigadeiro",
+        "imagem": "img/brigadeiro.jpg",
+        "preparo": "Junte o leite condensado, chocolate em pó e manteiga. Aqueça o fogo baixo. Envolva os morangos e passe no granulado",
+        "ingredientes": [
+            "Leite Condensado",
+            "Chocolate em Pó",
+            "Manteiga",
+            "Morango",
+            "Chocolate granulado"
+        ]
+    }
+]
