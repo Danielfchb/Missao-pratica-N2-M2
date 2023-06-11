@@ -1,17 +1,31 @@
 
-const listaVazia = document.getElementById('valores')
 
-function add() {
+
+const butaoAdicionar = document.querySelector(".adicionar");
+
+
+butaoAdicionar.addEventListener('click',function add(){
+    
+    
+    const listaVazia = document.getElementById('valores')
+    
     const formulario = document.querySelector(".form")
-    const numeros = document.getElementById('valor').value
+    const numeros = document.getElementById('valor')
+    console.log(numeros.value);
     const item = document.createElement("li")
 
 
 
-    item.innerHTML = numeros
+    item.innerHTML = numeros.value
     listaVazia.appendChild(item)
     formulario.reset();
-}
+
+})
+
+
+
+
+
 
 
 function ordenar() {
@@ -46,18 +60,18 @@ function ordenar() {
 
         })
     }
-    else if (selectOptions === "swap"){
-        const listaOrdenada = swap(listaDesordenada, 0, 1);
+    else if (selectOptions === "swap") {
+        const listaOrdenada = Swap(listaDesordenada, 0, 1);
         let i = 0;
         listaTagsValores.forEach(tag => {
             tag.textContent = listaOrdenada[i];
             i++;
 
         })
-        
+
     }
     else {
-        const listaOrdenada = quickSort(listaDesordenada);
+        const listaOrdenada = quickSort(listaDesordenada,0,(listaDesordenada.length-1));
         let i = 0;
         listaTagsValores.forEach(tag => {
             tag.textContent = listaOrdenada[i];
@@ -95,20 +109,20 @@ function misturando(lista) {
 
 }
 
-function swap(lista, position1, position2) {
+function Swap(lista, position1, position2) {
     // Verifica se as posições são válidas
     if (position1 < 0 || position1 >= lista.length || position2 < 0 || position2 >= lista.length) {
-      console.log("Posições inválidas.");
-      return;
+        console.log("Posições inválidas.");
+        return;
     }
-    
+
     // Realiza a troca dos valores
     var temp = lista[position1];
     lista[position1] = lista[position2];
     lista[position2] = temp;
-    
+
     return lista
-  }
+}
 
 
 
@@ -146,22 +160,39 @@ function selectionSort(lista) {
     return lista;
 }
 
-function quickSort(lista) {
-    if (lista.length <= 1) {
-        return lista;
+function quickSort(array, start, end) {
+    if (start < end) {
+        var pivot = array[end];
+        var partitionIndex = partition(array, start, end, pivot);
+
+        quickSort(array, start, partitionIndex - 1);
+        quickSort(array, partitionIndex + 1, end);
+
     }
+    return array;
+}
 
-    var pivot = lista[Math.floor(lista.length / 2)];
-    var left = [];
-    var right = [];
+function partition(array, start, end, pivot) {
+    var pivotIndex = array.indexOf(pivot);
+    swap(array, pivotIndex, end);
 
-    for (var i = 0; i < lista.length; i++) {
-        if (lista[i] < pivot) {
-            left.push(lista[i]);
-        } else if (lista[i] > pivot) {
-            right.push(lista[i]);
+    var pivotValue = array[end];
+    var i = start - 1;
+
+    for (var j = start; j < end; j++) {
+        if (array[j] <= pivotValue) {
+            i++;
+            swap(array, i, j);
         }
     }
 
-    return quickSort(left).concat([pivot], quickSort(right));
-}   
+    swap(array, i + 1, end);
+    return i + 1;
+}
+
+function swap(array, position1, position2) {
+    var temp = array[position1];
+    array[position1] = array[position2];
+    array[position2] = temp;
+}
+
